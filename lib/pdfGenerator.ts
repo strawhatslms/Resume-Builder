@@ -2,7 +2,7 @@ import jsPDF from 'jspdf';
 import { ResumeData } from '@/types/resume';
 import { formatDate } from './utils';
 
-export async function generatePDF(resumeData: ResumeData, templateType: string): Promise<void> {
+export async function generatePDF(resumeData: ResumeData): Promise<void> {
   const doc = new jsPDF({
     orientation: 'portrait',
     unit: 'mm',

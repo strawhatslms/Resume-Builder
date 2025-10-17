@@ -21,7 +21,7 @@ export default function Home() {
 
   const handleDownloadPDF = async () => {
     try {
-      await generatePDF(resumeData, selectedTemplate);
+      await generatePDF(resumeData);
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('Failed to generate PDF. Please try again.');
