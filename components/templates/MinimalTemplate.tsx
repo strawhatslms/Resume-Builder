@@ -7,7 +7,7 @@ interface TemplateProps {
 }
 
 export function MinimalTemplate({ data }: TemplateProps) {
-  const { personalInfo, education, workExperience, projects, skills, certifications, achievements } = data;
+  const { personalInfo, education, workExperience, projects, skills, certifications } = data;
 
   return (
     <div className="bg-white p-8 shadow-sm" style={{ minHeight: '297mm' }}>

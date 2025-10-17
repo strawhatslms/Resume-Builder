@@ -16,7 +16,7 @@ import { generatePDF } from '@/lib/pdfGenerator';
 import { Download, FileText, Eye, EyeOff } from 'lucide-react';
 
 export default function Home() {
-  const { resumeData, selectedTemplate } = useResumeStore();
+  const { resumeData } = useResumeStore();
   const [showPreview, setShowPreview] = useState(true);
 
   const handleDownloadPDF = async () => {

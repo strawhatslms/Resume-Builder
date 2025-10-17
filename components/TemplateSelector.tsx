@@ -1,6 +1,5 @@
 import React from 'react';
 import { useResumeStore } from '@/store/resumeStore';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ModernTemplate } from './templates/ModernTemplate';
 import { ClassicTemplate } from './templates/ClassicTemplate';
@@ -12,14 +11,14 @@ import { TechnicalTemplate } from './templates/TechnicalTemplate';
 import { ElegantTemplate } from './templates/ElegantTemplate';
 import { CompactTemplate } from './templates/CompactTemplate';
 import { BoldTemplate } from './templates/BoldTemplate';
-import { ResumeData } from '@/types/resume';
+import { ResumeData, TemplateType } from '@/types/resume';
 
 interface TemplateConfig {
   id: string;
   name: string;
   description: string;
   color: string;
-  component: React.ComponentType<{ data: any }>;
+  component: React.ComponentType<{ data: ResumeData }>;
 }
 
 // Dummy data for template previews
@@ -268,7 +267,7 @@ export function TemplateSelector() {
               return (
                 <button
                   key={template.id}
-                  onClick={() => setTemplate(template.id as any)}
+                  onClick={() => setTemplate(template.id as TemplateType)}
                   className={`
                     flex-shrink-0 w-72 rounded-xl border-4 transition-all transform hover:scale-105 hover:-translate-y-2 duration-300
                     ${isSelected 

@@ -7,7 +7,7 @@ interface TemplateProps {
 }
 
 export function TechnicalTemplate({ data }: TemplateProps) {
-  const { personalInfo, education, workExperience, projects, skills, certifications, achievements } = data;
+  const { personalInfo, education, workExperience, projects, skills, certifications } = data;
 
   return (
     <div className="bg-white p-8 shadow-sm font-mono" style={{ minHeight: '297mm' }}>
@@ -65,7 +65,7 @@ export function TechnicalTemplate({ data }: TemplateProps) {
                 <div className="ml-4 text-xs text-gray-700">
                   {skillCategory.items.map((item, itemIdx) => (
                     <span key={itemIdx}>
-                      '{item}'{itemIdx < skillCategory.items.length - 1 ? ', ' : ''}
+                      &apos;{item}&apos;{itemIdx < skillCategory.items.length - 1 ? ', ' : ''}
                     </span>
                   ))}
                 </div>
@@ -82,7 +82,7 @@ export function TechnicalTemplate({ data }: TemplateProps) {
             <span className="text-green-600 mr-2">#</span>
             <h2 className="text-sm font-bold text-gray-900 uppercase">Work Experience</h2>
           </div>
-          {workExperience.map((exp, index) => (
+          {workExperience.map((exp) => (
             <div key={exp.id} className="mb-4 bg-gray-50 p-3 border-l-4 border-green-600">
               <div className="flex justify-between items-start mb-2">
                 <div>
@@ -91,7 +91,7 @@ export function TechnicalTemplate({ data }: TemplateProps) {
                     <span className="font-bold text-gray-900">{exp.position.replace(/\s+/g, '')}()</span>
                   </div>
                   <div className="text-xs text-gray-700 mt-1">
-                    <span className="text-green-600">// </span>
+                    <span className="text-green-600">{'// '}</span>
                     {exp.company}, {exp.location}
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export function TechnicalTemplate({ data }: TemplateProps) {
                 <div>
                   <div className="text-xs font-bold text-gray-900">{edu.degree} in {edu.field}</div>
                   <div className="text-xs text-gray-700 mt-1">
-                    <span className="text-green-600">// </span>{edu.institution}
+                    <span className="text-green-600">{'// '}</span>{edu.institution}
                   </div>
                   {edu.gpa && (
                     <div className="text-xs text-gray-600 mt-1">
